@@ -23,9 +23,6 @@ packages:
   version: 12.0.0.0.11
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
-- name: WmSalesforceProvider
-  wpmServer: https://packages.webmethods.io
-  wpmRegistry: licensed
 services:
 - serviceName: project.kvv_1302_prod960841.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:soapTest
   packages:
@@ -149,8 +146,8 @@ configurationVariables:
   jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
   : "0"
-  jdbc.Embedded-Database-Pool.maxConns: "10"
   jdbc.SAP-TxStore-Pool.waitingThread: "10"
+  jdbc.Embedded-Database-Pool.maxConns: "10"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURLRequest
   : URL Query String
   jdbc.Embedded-Database-Pool.expireTime: "60000"
