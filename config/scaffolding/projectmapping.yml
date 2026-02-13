@@ -1,0 +1,9 @@
+version: "1.0"
+projectName: Kvv_1302_prod960841Project
+runtimes:
+- runtimeAlias: kvv_1302_prod960841
+  assets:
+  - name: fld_111819831_stage00.projects.fl017f96861c7c40c5859af7489cb4462d.integrations:tppDB
+    type: flow
+    stepId: /0
+    reference: fld_111819831_stage00.projects.fl017f96861c7c40c5859af7489cb4462d.WmPackageServiceProvider.SIQAJDBCAdapterTests.adapterServices:getData
