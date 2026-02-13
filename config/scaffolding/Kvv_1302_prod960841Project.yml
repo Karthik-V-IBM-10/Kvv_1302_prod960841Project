@@ -20,9 +20,29 @@ packages:
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
 - name: WmSalesforceRESTProvider
+  version: 12.0.0.0.11
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: licensed
+- name: WmSalesforceProvider
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
+- serviceName: project.kvv_1302_prod960841.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:soapTest
+  packages:
+  - name: Kvv_1302_prod960841Project
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.15
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 - serviceName: project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:restTest
   packages:
   - name: Kvv_1302_prod960841Project
@@ -35,6 +55,8 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.15
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
 - serviceName: project.kvv_1302_prod960841.integrations:jms_jndi_2waySSL
@@ -49,6 +71,8 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.15
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
 - serviceName: jms2wayssl_publisher:jms2wayssl_publisher
@@ -59,8 +83,143 @@ services:
   packages:
   - name: WmPublic
     version: 12.0.0.0.743
+- serviceName: project.kvv_1302_prod960841.integrations:sfREST
+  packages:
+  - name: Kvv_1302_prod960841Project
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.15
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
+- serviceName: project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.operations.actions:restTest
+  packages:
+  - name: Kvv_1302_prod960841Project
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.15
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.11
 configurationVariables:
   jdbc.Embedded-Database-Pool.waitingThread: "0"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.sockBuffSize
+  : "8192"
+  jdbcfunc.Xref.failFastMode: true
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.idleTimeout
+  : "-1"
+  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
+  jdbc.Embedded-Database-Pool.userid: APP
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.readTimeout
+  : "180000"
+  jdbcfunc.ISInternal.connPoolAlias: Embedded-Database-Pool
+  jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.tcpNoDelay
+  : "false"
+  jdbc.SAP-TxStore-Pool.userid: root
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.authenticationServerUrl
+  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.sockBuffSize
+  : "8192"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.providerUrl
+  : https://d0o000001qr6keac-dev-ed.my.salesforce.com
+  jdbc.SAP-TxStore-Pool.snoopenabled: "false"
+  jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
+  : "0"
+  jdbc.Embedded-Database-Pool.maxConns: "10"
+  jdbc.SAP-TxStore-Pool.waitingThread: "10"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURLRequest
+  : URL Query String
+  jdbc.Embedded-Database-Pool.expireTime: "60000"
+  jdbc.Embedded-Database-Pool.useSSL: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.retryCount
+  : "3"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupBackoffSecs
+  : "10"
+  jdbc.Embedded-Database-Pool.driverAlias: Embedded Database Driver
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  jdbc.Embedded-Database-Pool.spyparms: SpyAttributes=(log=(file)logs/spy/Embedded-Database-Pool.log;logTName=yes;timestamp=yes)
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.validateAfterInactivity
+  : "1000"
+  jdbc.Embedded-Database-Pool.dbURL: jdbc:derby:embedded;create=true
+  jdbc.SAP-TxStore-Pool.useSSL: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.retryIfRequestSentOk
+  : "true"
+  jdbcfunc.SAPTxStore.connPoolAlias: SAP-TxStore-Pool
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.scope
+  : offline_access api refresh_token
+  jdbcfunc.ISDashboardStats.failFastMode: false
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authenticationServerUrl
+  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshToken
+  : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR1637cjFT8vTWSxMJCq+8Fwx23ujlk6B/pLD2FnkHRwbbHw+MNh1fzWP9ra98cky/Z+"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.connectionEnabled
+  : "true"
+  jdbc.Embedded-Database-Pool.spyenabled: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.maximumPoolSize
+  : "10"
+  jdbc.SAP-TxStore-Pool.poolThreshold: "0"
+  jdbc.SAP-TxStore-Pool.expireTime: "60000"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.expireTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.accessTokenRefreshURLRequest
+  : Body Query String
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth.consumerId
+  : 3MVG9pe2TCoA1Pf6F9PMP1LEDsuYm6pfL6T8OD7YSQUQsx36uZNIjUH3BCzBZ8lgStKaUEITogkQ7hNByxJjv
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.keepAliveInterval
+  : "300000"
+  jdbc.SAP-TxStore-Pool.description: Connection Pool for the SAP Transaction Store
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderPrefix
+  : Bearer
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.validateAfterInactivity
+  : "1000"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolable
+  : "true"
+  jdbc.Embedded-Database-Pool.poolThreshold: "0"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cx.grant_type
+  : refresh_token
+  jdbc.SAP-TxStore-Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
+  jdbc.SAP-TxStore-Pool.driverAlias: MySQL CC Driver
+  ? iscloudstreamsconnectorservice.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:restTest.connectionAlias
+  : project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:restTest
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURL
+  : https://login.salesforce.com/services/oauth2/token
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.consumerSecret
   : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.readTimeout
@@ -68,110 +227,89 @@ configurationVariables:
   jdbc.SAP-TxStore-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP-TxStore-Pool.log;ddtdbg.ProtocolTraceShowTime=true
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.connectTimeout
   : "30000"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.connectionEnabled
-  : "true"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.sockBuffSize
-  : "8192"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth.accessToken
+  : "{AES}bzO+KX5xKoE0CKrgiYZryEJCc28x2QBODfJSJ6CleRFa+2DzxictbQsvDI2sVqSPyla7tLzWYTVeW/YHTq2TnIndWhV0t/tnSTjg5GXclIH2589LJj3W7DaymwFSO9GDthMYCsMRtvjnQ85gGn25EWmK1wuN3U1rA1B0VhuZoUw="
   jdbcfunc.SAPTxStore.failFastMode: false
-  jdbcfunc.Xref.failFastMode: true
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketStaleCheck
-  : "true"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.idleTimeout
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.idleTimeout
   : "-1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.poolable
+  : "true"
   jdbcfunc.ISDashboardStats.connPoolAlias: Embedded-Database-Pool
   jdbc.SAP-TxStore-Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  jdbcfunc.Xref.connPoolAlias: Embedded-Database-Pool
-  jdbc.Embedded-Database-Pool.userid: APP
-  jdbcfunc.ISInternal.connPoolAlias: Embedded-Database-Pool
-  jdbc.Embedded-Database-Pool.password: "{AES}Zcw2EXTJgNDVmVzJO2Y3Bw=="
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.socketLinger
-  : "-1"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.blockTimeout
   : "1000"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderInTokenRefresh
   : "false"
-  jdbc.SAP-TxStore-Pool.userid: root
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.accessTokenRefreshURL
+  : https://login.salesforce.com/services/oauth2/token
   jdbc.Embedded-Database-Pool.snoopenabled: "false"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolIncrementSize
-  : "1"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.providerUrl
-  : https://d0o000001qr6keac-dev-ed.my.salesforce.com
-  jdbc.SAP-TxStore-Pool.snoopenabled: "false"
-  jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
-  : "0"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.authorizationHeaderPrefix
+  : Bearer
   jdbcfunc.ISInternal.failFastMode: true
-  jdbc.Embedded-Database-Pool.maxConns: "10"
-  jdbc.SAP-TxStore-Pool.waitingThread: "10"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.scope
   : offline_access api refresh_token
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURLRequest
-  : URL Query String
-  jdbc.Embedded-Database-Pool.expireTime: "60000"
-  jdbc.Embedded-Database-Pool.useSSL: "false"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupBackoffSecs
-  : "10"
+  ? iscloudstreamsconnectorservice.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:restTest.virtualServiceName
+  : WmCloudStreams.RestVS
   jdbc.Embedded-Database-Pool.minConns: "0"
-  jdbc.Embedded-Database-Pool.driverAlias: Embedded Database Driver
-  jdbc.Embedded-Database-Pool.spyparms: SpyAttributes=(log=(file)logs/spy/Embedded-Database-Pool.log;logTName=yes;timestamp=yes)
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.validateAfterInactivity
-  : "1000"
-  jdbc.Embedded-Database-Pool.dbURL: jdbc:derby:embedded;create=true
-  jdbc.SAP-TxStore-Pool.useSSL: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.connectTimeout
+  : "180000"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth.consumerSecret
+  : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.authorizationHeaderInTokenRefresh
+  : "false"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.keepAliveInterval
   : "300000"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.consumerId
   : 3MVG9pe2TCoA1Pf6F9PMP1LEDsuYm6pfL6T8OD7YSQUQsx36uZNIjUH3BCzBZ8lgStKaUEITogkQ7hNByxJjv
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.retryIfRequestSentOk
-  : "true"
-  jdbcfunc.SAPTxStore.connPoolAlias: SAP-TxStore-Pool
-  jdbcfunc.ISDashboardStats.failFastMode: false
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authenticationServerUrl
-  : https://login.salesforce.com/services/oauth2/token
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshToken
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.refreshToken
   : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR1637cjFT8vTWSxMJCq+8Fwx23ujlk6B/pLD2FnkHRwbbHw+MNh1fzWP9ra98cky/Z+"
-  jdbc.Embedded-Database-Pool.spyenabled: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.authorizationServerUrl
+  : https://login.salesforce.com/services/oauth2/authorize
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.enableSNI
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.socketStaleCheck
+  : "true"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth.accessToken
   : "{AES}bzO+KX5xKoE0CKrgiYZryEJCc28x2QBODfJSJ6CleRFa+2DzxictbQsvDI2sVqSPyla7tLzWYTVeW/YHTq2TnIndWhV0t/tnSTjg5GXclIH2589LJj3W7DaymwFSO9GDthMYCsMRtvjnQ85gGn25EWmK1wuN3U1rA1B0VhuZoUw="
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.maximumPoolSize
-  : "10"
-  jdbc.SAP-TxStore-Pool.poolThreshold: "0"
-  jdbc.SAP-TxStore-Pool.expireTime: "60000"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.expireTimeout
-  : "1000"
   jdbc.SAP-TxStore-Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP-TxStore-Pool.log;logTName=yes;timestamp=yes)
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.providerUrl
+  : https://d0o000001qr6keac-dev-ed.my.salesforce.com
   jdbc.SAP-TxStore-Pool.minConns: "5"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.reuseAddr
   : "false"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableSNI
   : "true"
-  jdbc.SAP-TxStore-Pool.description: Connection Pool for the SAP Transaction Store
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationHeaderPrefix
-  : Bearer
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.oauth_v20.refreshAccessToken
+  : "true"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.retryCount
   : "4"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.expireTimeout
+  : "1000"
   jdbc.SAP-TxStore-Pool.spyenabled: "false"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.maximumPoolSize
+  : "10"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
   jdbc.SAP-TxStore-Pool.maxConns: "10"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.tcpNoDelay
   : "false"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cn.enableCompression
-  : "false"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.poolable
-  : "true"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.minimumPoolSize
   : "1"
-  jdbc.Embedded-Database-Pool.poolThreshold: "0"
-  jdbc.SAP-TxStore-Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.authorizationServerUrl
   : https://login.salesforce.com/services/oauth2/authorize
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.timeoutType
   : auto
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.cx.grant_type
   : refresh_token
-  jdbc.SAP-TxStore-Pool.driverAlias: MySQL CC Driver
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.refreshAccessToken
   : "true"
-  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURL
-  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.timeoutType
+  : auto
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.cn.retryIfRequestSentOk
+  : "true"
+  ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:soapTest.blockTimeout
+  : "1000"
