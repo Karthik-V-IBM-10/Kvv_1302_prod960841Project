@@ -23,12 +23,19 @@ packages:
   version: 12.0.0.0.11
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: JMSTest
+  gitServerName: kvv
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: Karthik-V-IBM-10
+  gitBranch: main
 services:
-- serviceName: project.kvv_1302_prod960841.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:soapTest
+- serviceName: project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.operations.actions:restTest
   packages:
   - name: Kvv_1302_prod960841Project
     version: "1.0"
   - name: JMS2waySSL
+    version: "1.0"
+  - name: JMSTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -36,24 +43,6 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-  - name: WmSalesforceProvider
-    version: 12.0.0.0.15
-  - name: WmSalesforceRESTProvider
-    version: 12.0.0.0.11
-- serviceName: project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:restTest
-  packages:
-  - name: Kvv_1302_prod960841Project
-    version: "1.0"
-  - name: JMS2waySSL
-    version: "1.0"
-  - name: SIQAJDBCAdapterTests
-    version: "1.0"
-  - name: WmJDBCAdapter
-    version: 10.3.0.0.34
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-  - name: WmSalesforceProvider
-    version: 12.0.0.0.15
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
 - serviceName: project.kvv_1302_prod960841.integrations:jms_jndi_2waySSL
@@ -62,14 +51,14 @@ services:
     version: "1.0"
   - name: JMS2waySSL
     version: "1.0"
+  - name: JMSTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-  - name: WmSalesforceProvider
-    version: 12.0.0.0.15
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
 - serviceName: jms2wayssl_publisher:jms2wayssl_publisher
@@ -86,21 +75,7 @@ services:
     version: "1.0"
   - name: JMS2waySSL
     version: "1.0"
-  - name: SIQAJDBCAdapterTests
-    version: "1.0"
-  - name: WmJDBCAdapter
-    version: 10.3.0.0.34
-    wpmServer: https://packages.webmethods.io
-    wpmRegistry: licensed
-  - name: WmSalesforceProvider
-    version: 12.0.0.0.15
-  - name: WmSalesforceRESTProvider
-    version: 12.0.0.0.11
-- serviceName: project.kvv_1302_prod960841.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.operations.actions:restTest
-  packages:
-  - name: Kvv_1302_prod960841Project
-    version: "1.0"
-  - name: JMS2waySSL
+  - name: JMSTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -108,8 +83,6 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-  - name: WmSalesforceProvider
-    version: 12.0.0.0.15
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.11
 configurationVariables:
@@ -146,8 +119,8 @@ configurationVariables:
   jdbc.Embedded-Database-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/Embedded-Database-Pool.log;ddtdbg.ProtocolTraceShowTime=true
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.startupRetryCount
   : "0"
-  jdbc.SAP-TxStore-Pool.waitingThread: "10"
   jdbc.Embedded-Database-Pool.maxConns: "10"
+  jdbc.SAP-TxStore-Pool.waitingThread: "10"
   ? cloudstreamsconnection.project..kvv_1302_prod960841..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:restTest.oauth_v20.accessTokenRefreshURLRequest
   : URL Query String
   jdbc.Embedded-Database-Pool.expireTime: "60000"
