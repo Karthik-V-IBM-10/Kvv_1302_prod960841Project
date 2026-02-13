@@ -7,6 +7,11 @@ packages:
   gitUrl: https://github.com/Karthik-V-IBM-10
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
+- name: JMS2waySSL
+  gitServerName: kvv
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: Karthik-V-IBM-10
+  gitBranch: main
 configurationVariables:
   jdbc.Embedded-Database-Pool.waitingThread: "0"
   jdbc.SAP-TxStore-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP-TxStore-Pool.log;ddtdbg.ProtocolTraceShowTime=true
